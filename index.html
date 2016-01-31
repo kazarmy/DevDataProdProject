@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>sat.act SLR Explorer</title>
+  <meta charset="utf-8">
+  <meta name="description" content="sat.act SLR Explorer">
+  <meta name="author" content="Khairul Azhar Kasmiran">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>sat.act SLR Explorer</h1>
+    <h2>SLR = Single Linear Regression</h2>
+    <p>Khairul Azhar Kasmiran<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Problem</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Can use a pairs plot to do single linear regression (SLR) between all <code>sat.act</code> variables, but ...</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ol>
+<li>The panels are a bit small.</li>
+<li>No p-values.</li>
+</ol>
+
+<p>By the way, the plot was done using the following embedded R code:</p>
+
+<pre><code class="r">library(psych)
+pairs.panels(sat.act, ellipses = FALSE,
+             lm = TRUE)
+</code></pre>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Solution</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Use the sat.act SLR Explorer!</p>
+
+<ol>
+<li>Large plots.</li>
+<li>P-values (for the slope) with significance codes.</li>
+</ol>
+
+<p><img src="assets/img/screenshot.png" alt="alt text"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>The sat.act dataset</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Dataset from the <a href="http://sapa-project.org">SAPA project</a> and part of the R <code>psych</code> library.</li>
+<li>Contains self-reported scores on the SAT Verbal (SATV), SAT Quantitative (SATQ) and ACT tests.</li>
+</ul>
+
+<p>Some interesting observations after using the Explorer:</p>
+
+<ol>
+<li>There might be no link between education and both SAT scores, but there might be a link between education and ACT scores.</li>
+<li>Men might have a slight advantage over women on the SATQ, but not on the SATV or ACT.</li>
+</ol>
+
+<p>Caveat (from the <code>sat.act</code> help file): The score means are higher than national norms suggesting both self selection for people taking on line personality and ability tests and a self reporting bias in scores.</p>
+
+<p>Disclaimer: The observations contained in this presentation are my own and not of my
+employer. This Explorer is for exploration only and not for drawing conclusions!</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>References</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Revelle, William, Wilt, Joshua, and Rosenthal, Allen (2010). <a href="http://dx.doi.org/10.1007/978-1-4419-1210-7_2">Individual Differences in Cognition: New Methods for Examining the Personality-Cognition Link.</a> In Gruszka, Aleksandra, Matthews, Gerald and Szymura, Blazej (Eds.) Handbook of Individual Differences in Cognition: Attention, Memory and Executive Control, Springer.</p>
+
+<ul>
+<li>Reference paper for dataset as given by the <code>sat.act</code> help file, with updated citation.</li>
+</ul></li>
+<li><p>Kipp, Andy (2014). <a href="http://shiny.rstudio.com/articles/shinyapps.html">Getting started with shinyapps.io.</a> Accessed on 28 January 2016.</p>
+
+<ul>
+<li>Contains a Diamonds Explorer that provided guidance on how to implement such applications using Shiny.</li>
+</ul></li>
+</ol>
+
+<p><code>~~~~</code></p>
+
+<p>This presentation was built using <a href="http://slidify.org/">Slidify</a>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Problem'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Solution'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The sat.act dataset'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='References'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
